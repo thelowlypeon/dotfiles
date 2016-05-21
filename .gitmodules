@@ -19,3 +19,6 @@
 [submodule "vim/bundle/blade.vim"]
 	path = vim/bundle/blade.vim
 	url = https://github.com/jwalton512/vim-blade.git
+[submodule "git/diff-so-fancy"]
+	path = git/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy

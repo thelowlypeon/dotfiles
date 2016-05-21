@@ -57,11 +57,15 @@ au! Syntax less source $VIM/less.vim
 " allows you to match more than just single characters using %
 :source ~/.vim/plugin/matchit.vim 
 
-" NERDTree stuff. i took this out because i like ctrl-p way more
+" NERDTree stuff
 "autocmd vimenter * NERDTree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "autocmd vimenter * if !argc() | NERDtree |endif
-"let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
+let g:NERDTreeDirArrows=1
+let g:NERDTreeDirArrowExpandable='▸'
+let g:NERDTreeDirArrowCollapsible='▾'
+let g:NERDTreeGlyphReadOnly='RO'
 
 " Press Shift+P while in visual mode to replace the selection without
 " overwriting the default register

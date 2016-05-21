@@ -1,0 +1,14 @@
+[user]
+	name = thelowlypeon
+	email = me@petercompernolle.com
+[merge]
+	conflictstyle = diff3
+	conflictsyle = diff3
+[color]
+    diff = true
+    status = true
+    branch = true
+    interactive = true
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore

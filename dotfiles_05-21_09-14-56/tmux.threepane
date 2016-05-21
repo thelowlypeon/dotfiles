@@ -1,6 +1,0 @@
-selectp -t 0        #select pane 0
-splitw -v -p 25     #split pane 0 horizontally by 25%
-selectp -t 1        #select pane 1, the new one
-splitw -h -p 25     #split that fucker by 25%
-selectp -t 0        #go back to the first pane
-send-keys -t 0 "vim" C-m    #open up vim in the first pane

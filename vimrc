@@ -2,19 +2,7 @@
 "   experimental still, but a good chunk of it is what makes me feel at home in vim.
 
 set nocompatible               " be iMproved
-filetype off                   " required for vundle
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'kokx/exuberant-ctags'
-Bundle 'Lokaltog/powerline', {'rtp':  'powerline/bindings/vim'}
 " =================== Powerline =====================      
 set encoding=utf-8               "Enable utf8              
 let g:Powerline_symbols='unicode'  "Enable patched fonts

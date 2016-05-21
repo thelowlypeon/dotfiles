@@ -133,7 +133,7 @@ endfunction
 imap <Tab> <C-R>=BetterTab()<CR>
 
 " keep swap files elsewhere so they don't fuck up git stuff
-set backupdir=~/\.vim/backup/tmp
+set backupdir=~/\.vim/tmp
 set directory=~/\.vim/tmp
 
 

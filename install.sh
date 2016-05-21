@@ -10,7 +10,7 @@
 # you can run this script in two ways:
 #
 # 1. the continuation of part 1, but download the install script, too
-#     curl https://github.com/thelowlypeon/dotfiles/src/master/install.sh | bash
+#     curl https://raw.githubusercontent.com/thelowlypeon/dotfiles/master/install.sh | bash
 # 2. this will use the specified directory for the src config files:
 #     bash install.sh <dir>
 

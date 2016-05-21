@@ -16,3 +16,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/blade.vim"]
+	path = vim/bundle/blade.vim
+	url = https://github.com/jwalton512/vim-blade.git

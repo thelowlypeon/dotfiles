@@ -7,3 +7,6 @@
 [submodule "vim/bundle/signify"]
 	path = vim/bundle/signify
 	url = https://github.com/mhinz/vim-signify
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/bentomas/ctrlp.vim

@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Made by @bentomas at https://bitbucket.org/bentomas/dotfiles
+# Used with tremendous gratitude.
+#
 # this install script isn't a config file, obviously.  You can download it and
 # pipe it into bash to automatically install all the files.  Makes getting set
 # up on a new computer a breeze!
@@ -7,7 +10,7 @@
 # you can run this script in two ways:
 #
 # 1. the continuation of part 1, but download the install script, too
-#     curl https://bitbucket.org/bentomas/dotfiles/src/master/install.sh | bash
+#     curl https://github.com/thelowlypeon/dotfiles/src/master/install.sh | bash
 # 2. this will use the specified directory for the src config files:
 #     bash install.sh <dir>
 
@@ -42,12 +45,19 @@ SYMBOLIC=0
 # filter files by this name
 FILTER=''
 
+# dotfiles repo source, overridden with --source=*
+SRC="https://github.com/thelowlypeon/dotfiles/archive/master.zip"
+
 # parse the options
 for i in "$@"; do
     case $i in
         -h|--help)
             echo "TODO"
             exit
+            shift
+            ;;
+        --source=*)
+            SRC="${i#*=}"
             shift
             ;;
         --debug)
@@ -90,6 +100,7 @@ for i in "$@"; do
 done
 
 if [ "$DEBUG" -ne 0 ]; then
+    echo "source:         $SRC"
     echo "debug:          $DEBUG"
     echo "diffs:          $PRINT_DIFFS"
     echo "dry run:        $DRY_RUN"
@@ -146,10 +157,8 @@ fi
 
 # check how this is being run, if piping, then download files
 if [ $0 = "bash" ]; then
-    SRC="https://bitbucket.org/bentomas/dotfiles/get/master.tar.gz"
     # store the downloaded files here
     TMP_SRC_FOLDER="dotfiles_src"
-
 
     echo "downloading src from server..."
     echo "from:        $SRC"
@@ -175,7 +184,7 @@ if [ $0 = "bash" ]; then
     fi
 
     # actually download and unpack
-    $fetch https://bitbucket.org/bentomas/dotfiles/get/master.tar.gz | $tar x -C $TMP_SRC_FOLDER || { rmdir $TMP_SRC_FOLDER; exit 2; };
+    $fetch $SRC | $tar x -C $TMP_SRC_FOLDER || { rmdir $TMP_SRC_FOLDER; exit 2; };
 
     cd $TMP_SRC_FOLDER
     folder=$(ls -A .)

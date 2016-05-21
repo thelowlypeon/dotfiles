@@ -8,9 +8,10 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
+
 export PS1='\w[\[\033[0;33m\]$(parse_git_branch)\[\033[0m\]]$ '
 #export LD_LIBRARY_PATH="$HOME/local/lib"
-export PATH="$HOME/local/bin:$PATH"
+export PATH=~/.bin:$PATH #add local scripts to PATH
 export PATH="/usr/local/bin:/usr/local/etc:/usr/local/sbin:~/bin:$PATH"
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
 export EDITOR='vim'
@@ -28,11 +29,6 @@ alias cgrep='find . -type f -name "*.php" -print0 | xargs -0 grep'
 #thanks andy!
 alias graphp='grep -Er --color --include=*.php'
 alias graprb='grep -Er --color --include=*.rb'
-
-#git autocomplete
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

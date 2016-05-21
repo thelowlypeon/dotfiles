@@ -1,0 +1,31 @@
+#! /bin/bash
+
+if [ -f /usr/bin/trash ]; then                # trash command already exists
+  /usr/bin/trash "$@"
+  exit
+elif [ -f /usr/local/bin/trash ]; then        # trash command already exists
+  /usr/local/bin/trash "$@"
+  exit
+# decide location of trash
+elif [ -e ~/.Trash ]; then                    # mac os x
+  TRASH=~/.Trash
+elif [ -e ~/.local/share/Trash/files ]; then  # ubuntu
+  TRASH=~/.local/share/Trash/files
+else                                          # generic
+  TRASH=~/trash
+fi
+
+#make sure trash folder exists
+mkdir -p $TRASH
+
+for filename in "$@"; do
+  base=`basename "$filename"`
+
+  if [ -e "$TRASH/$base" ]; then
+    datetime=`date +%d-%H-%M-%S`
+    base="$base-$datetime"
+  fi
+
+  echo "\`$filename' -> \`$TRASH/$base'"
+  mv "$filename" "$TRASH/$base"
+done

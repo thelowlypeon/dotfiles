@@ -23,24 +23,11 @@ function ttmux() {
     fi
 }
 
-#tmux source ~/.tmux.conf
-if which tmux >/dev/null; then
-    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-        echo '================ welcome ==============='
-        if tmux has-session -t "ws"; then
-            echo 'current tmux sessions:'
-            tmux ls
-        else
-            tmux new-session -d -s "ws"
-            echo 'created new tmux session "ws"'
-            tmux ls
-        fi
-    fi
-fi
-
 alias cgrep='find . -type f -name "*.php" -print0 | xargs -0 grep'
+
 #thanks andy!
-alias grap='grep -Er --color --include=*.php'
+alias graphp='grep -Er --color --include=*.php'
+alias graprb='grep -Er --color --include=*.rb'
 
 #git autocomplete
 if [ -f ~/.git-completion.bash ]; then

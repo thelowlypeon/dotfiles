@@ -202,7 +202,7 @@ if [ "$DATE_CMD" != '' ]; then
 else
     CURRENT_TIME=""
 fi
-BACKUP_DEST="${SRC}/dotfiles_$CURRENT_TIME"
+BACKUP_DEST="${SRC}/backups/dotfiles_$CURRENT_TIME"
 
 DEST=`eval echo ${DEST//>}`
 

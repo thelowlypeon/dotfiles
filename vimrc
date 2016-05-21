@@ -83,15 +83,15 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 "If you have something highlighted and type a, it replaces the text, like other editors.
 "If you type (, however, it wraps the selected text in parentheses.
 "This is enormously useful. Luckily, it's very easy to recreate in Vim:
-"vnoremap ((  <ESC>`>a)<ESC>`<i(<ESC>
-"vnoremap ))  <ESC>`<i(<ESC>`>a)<ESC>xp
+vnoremap ((  <ESC>`>a)<ESC>`<i(<ESC>
+vnoremap ))  <ESC>`<i(<ESC>`>a)<ESC>xp
 "vnoremap {{  <ESC>`>a}<ESC>`<i{<ESC>
 "vnoremap }}  <ESC>`<i{<ESC>`>a}<ESC>xp
-"vnoremap ""  <ESC>`>a"<ESC>`<i"<ESC>
-"vnoremap ''  <ESC>`>a'<ESC>`<i'<ESC>
-"vnoremap ``  <ESC>`>a`<ESC>`<i`<ESC>
-"vnoremap [[  <ESC>`>a]<ESC>`<i[<ESC>
-"vnoremap ]]  <ESC>`<i[<ESC>`>a]<ESC>xp
+vnoremap ""  <ESC>`>a"<ESC>`<i"<ESC>
+vnoremap ''  <ESC>`>a'<ESC>`<i'<ESC>
+vnoremap ``  <ESC>`>a`<ESC>`<i`<ESC>
+vnoremap [[  <ESC>`>a]<ESC>`<i[<ESC>
+vnoremap ]]  <ESC>`<i[<ESC>`>a]<ESC>xp
 
 " always try and show lines above and below the cursor
 set scrolloff=2

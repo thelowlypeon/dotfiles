@@ -30,8 +30,6 @@ function exit_with_error_and_usage {
     exit
 }
 
-
-
 # variables
 email=$CLOUDFLARE_EMAIL
 key=$CLOUDFLARE_API_KEY
@@ -58,11 +56,11 @@ do
 done;
 
 if [ -z $email ]; then
-    exit_with_error_and_usage "Invalid email. Use the -e flag or \$CLOUDFLARE_EMAIL for your Cloudflare email"
+    exit_with_error_and_usage "Invalid email."
 fi
 
 if [ -z $key ]; then
-    exit_with_error_and_usage "Invalid Cloudflare API key. Use the -k flag or \$CLOUDFLARE_API_KEY for your Cloudflare API key"
+    exit_with_error_and_usage "Invalid Cloudflare API key."
 fi
 
 echo -n "Purging "
@@ -94,7 +92,7 @@ else
 fi
 
 if [ -z "$zone" ]; then
-    exit_with_error_and_usage "Invalid Cloudflare zone. Use the -z flag to set the zone, or if you don't know it, use -s for the site"
+    exit_with_error_and_usage "Invalid Cloudflare zone"
 fi
 
 purge=$(curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/$zone/purge_cache" \

@@ -27,5 +27,5 @@
 	url = https://github.com/jwalton512/vim-blade.git
     ignore = dirty
 [submodule "bin/cloudflare-cli"]
-	path = bin/cloudflare-cli
+	path = lib/cloudflare-cli
 	url = git@github.com:thelowlypeon/cloudflare-cli.git

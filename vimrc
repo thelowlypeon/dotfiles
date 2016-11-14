@@ -7,6 +7,9 @@ set nocompatible               " be iMproved
 set encoding=utf-8               "Enable utf8              
 let g:Powerline_symbols='unicode'  "Enable patched fonts
 
+" load pathogen at submodule-friendly path
+:source ~/.vim/bundle/pathogen/autoload/pathogen.vim 
+
 " and more awesomeness continues...
 syntax on
 
@@ -55,7 +58,7 @@ au BufRead,BufNewFile *.less set filetype=less
 au! Syntax less source $VIM/less.vim
 
 " allows you to match more than just single characters using %
-:source ~/.vim/plugin/matchit.vim 
+":source ~/.vim/plugin/matchit.vim 
 
 " NERDTree stuff
 "autocmd vimenter * NERDTree

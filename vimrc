@@ -7,9 +7,6 @@ set nocompatible               " be iMproved
 set encoding=utf-8               "Enable utf8              
 let g:Powerline_symbols='unicode'  "Enable patched fonts
 
-" load pathogen at submodule-friendly path
-:source ~/.vim/bundle/pathogen/autoload/pathogen.vim 
-
 " and more awesomeness continues...
 syntax on
 
@@ -172,6 +169,7 @@ let html_use_css = 1
 nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " pathogen for autoloading anything in ~/.vim/bundle (https://github.com/tpope/vim-pathogen)
+runtime bundle/pathogen/autoload/pathoge.vim
 execute pathogen#infect()
 
 " Vim-signify settings

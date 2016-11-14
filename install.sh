@@ -185,6 +185,7 @@ if [ $0 = "bash" ]; then
 
     # actually download and unpack
     $fetch $SRC | $tar x -C $TMP_SRC_FOLDER || { rmdir $TMP_SRC_FOLDER; exit 2; };
+    git submodule update --init
 
     cd $TMP_SRC_FOLDER
     folder=$(ls -A .)

@@ -169,7 +169,7 @@ let html_use_css = 1
 nnoremap <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " pathogen for autoloading anything in ~/.vim/bundle (https://github.com/tpope/vim-pathogen)
-runtime bundle/pathogen/autoload/pathoge.vim
+runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Vim-signify settings
